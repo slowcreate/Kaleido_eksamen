@@ -12,7 +12,7 @@
 @layer base {
   h1 {
     font-family: "Magilio";
-    font-size: xx-large;
+    font-size: bodyDesk;
   }
 
   h2,
@@ -28,6 +28,7 @@
   p,
   summary {
     font-family: "Gabarito";
+    /* @apply text-green-500; */
   }
 }
 
