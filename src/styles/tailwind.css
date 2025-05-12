@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap");
+
+/* @tailwind base; */
+/* @tailwind components; */
+/* @import "tailwindcss/preflight" layer(base);
+@tailwind utilities; */
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@layer base {
+  h1 {
+    font-family: "Magilio";
+    font-size: xx-large;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  a,
+  span {
+    font-family: "Sansita";
+  }
+
+  h6,
+  p,
+  summary {
+    font-family: "Gabarito";
+  }
+}
+
+@media (min-width: 769px) {
+  /* General classnames */
+  .pc-only {
+    display: block;
+  }
+
+  .pc-hide {
+    display: none;
+  }
+}
