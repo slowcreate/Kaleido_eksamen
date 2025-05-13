@@ -10,6 +10,17 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
-    "astro": "^5.7.12"
-  }
+    "@tailwindcss/vite": "^4.1.6",
+    "astro": "^5.7.12",
+    "tailwindcss": "^4.1.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3"
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "tailwind.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
