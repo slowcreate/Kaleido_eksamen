@@ -130,11 +130,12 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .text-gradient-primary:hover {
-    background: var(--color-primary-500);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+
+  /* Bruges kun hvis du vil have fallback i CSS (ikke nødvendig pga group-hover) */
+  .group:hover .text-gradient-primary {
+    background: none;
+    -webkit-text-fill-color: theme("colors.primary.500");
+    color: theme("colors.primary.500");
   }
 
   .btn-shadow {
@@ -142,7 +143,7 @@
     transition: box-shadow 0.3s ease;
   }
 
-  .btn-shadow:hover {
+  .group:hover .btn-shadow {
     box-shadow: var(--drop--shadow----secondary);
   }
 }
