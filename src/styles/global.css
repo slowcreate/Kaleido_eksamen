@@ -42,25 +42,174 @@
   --color-accent-200: rgba(153, 160, 255, 1);
   --color-accent-100: rgba(205, 207, 255, 1);
   --color-accent-50: rgba(229, 231, 255, 1);
+
+  --spacing-none: 0px;
+  --spacing-xxs: 8px;
+  --spacing-xs: 16px;
+  --spacing-s: 24px;
+  --spacing-sm: 32px;
+  --spacing-m: 40px;
+  --spacing-ml: 48px;
+  --spacing-lg: 64px;
+  --spacing-xl: 80px;
+  --spacing-2xl: 96px;
+  --spacing-3xl: 112px;
+  --spacing-4xl: 128px;
+  --spacing-5xl: 160px;
+  --spacing-6xl: 208px;
+  --spacing-7xl: 320px;
+  --spacing-8xl: 360px;
+  --spacing-9xl: 424px;
+
+  --border_radius-radius-none: 0px;
+  --border_radius-radius-xs: 7px;
+  --border_radius-radius-s: 14px;
+  --border_radius-radius-md: 21.5px;
+  --border_radius-radius-lg: 35px;
+  --border_radius-radius-xl: 49px;
+  --border_radius-radius-2xl: 79px;
+  --border_radius-radius-3xl: 100px;
+
+  --text-konsultativDesk: 1rem;
+  --text-baseDesk: 1.25rem;
+  --text-bodyDesk: 1.125rem;
+  --text-smallDesk: 1.5rem;
+  --text-smallMediumDesk: 2rem;
+  --text-mediumDesk: 2.45rem;
+  --text-mediumLargeDesk: 3.5rem;
+  --text-largeDesk: 5.61rem;
+  --text-xlargeDesk: 6rem;
+
+  --text-konsultativMobile: 0.8rem;
+  --text-bodyMobile: 1rem;
+  --text-baseMobile: 1.2rem;
+  --text-smallMobile: 1.44rem;
+  --text-smallMediumMobile: 1.728rem;
+  --text-mediumMobile: 1.9rem;
+  --text-mediumLargeMobile: 2.488rem;
+  --text-largeMobile: 2.986rem;
+  --text-xlargeMobile: 4rem;
+
+  --font-light: 300;
+  --font-regular: 400;
+  --font-semibold: 500;
+  --font-bold: 600;
+  --font-extrabold: 700;
+
+  /* Text-size styles */
+  --h1----desktop: 112px;
+  --h2----desktop: 54.34000015258789px;
+  --h3----desktop: 35.52000045776367px;
+  --h6----desktop: 19.329999923706055px;
+  --h1----mobile: 53.779998779296875px;
+  --h2----mobile: 26.809999465942383px;
+  --h3----mobile: 18.18000030517578px;
+  --h5----mobile: 12.039999961853027px;
+  --h6----mobile: 11.199999809265137px;
+  --p----mobile: 9px;
+  --link----desktop: 27.329999923706055px;
+  --link----mobile: 16.329999923706055px;
+  --p----desktop: 17px;
+  --h4----mobile: 14.649999618530273px;
+  --h4----desktop: 27.899999618530273px;
+  --h5----desktop: 22.43000030517578px;
+
+  /* Effect styles */
+  --inner--shadow: inset 0px 2px 6px rgba(45, 45, 45, 0.95);
+  --drop--shadow: 0px 0px 14px rgba(235, 255, 247, 1);
+  --drop--shadow----secondary: 2px 0px 48px rgba(235, 255, 247, 1);
+  --inner--shadow----secondary: inset 0px 4px 24px rgba(48, 255, 167, 1);
 }
 
 @layer base {
   h1 {
     font-family: "Bronatte Display";
+    font-size: var(--h1----desktop);
   }
 
-  h2,
-  h3,
-  h4,
-  h5,
+  h2 {
+    font-family: "Unbounded";
+    font-size: var(--h2----desktop);
+  }
+
+  h3 {
+    font-family: "Unbounded";
+    font-size: var(--h3----desktop);
+  }
+
+  h4 {
+    font-family: "Unbounded";
+    font-size: var(--h4----desktop);
+  }
+
+  h5 {
+    font-family: "Unbounded";
+    font-size: var(--h5----desktop);
+  }
+
+  h6 {
+    font-family: "Unbounded";
+    font-size: var(--h6----desktop);
+  }
+
+  p {
+    font-family: "Unbounded";
+    font-size: var(--p----desktop);
+  }
+
   a,
   span {
     font-family: "Unbounded";
+    font-size: var(--link----desktop);
   }
 
-  h6,
-  p,
   summary {
     font-family: "Unbounded";
+    font-size: var(--p----desktop);
+  }
+
+  body {
+    @apply bg-cover bg-center w-full h-full bg-secondary-500;
+    background-image: url("../assets/gradient_baggrund.png");
+  }
+
+  /* Mobile overrides */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: var(--h1----mobile);
+    }
+
+    h2 {
+      font-size: var(--h2----mobile);
+    }
+
+    h3 {
+      font-size: var(--h3----mobile);
+    }
+
+    h4 {
+      font-size: var(--h4----mobile);
+    }
+
+    h5 {
+      font-size: var(--h5----mobile);
+    }
+
+    h6 {
+      font-size: var(--h6----mobile);
+    }
+
+    p {
+      font-size: var(--p----mobile);
+    }
+
+    a,
+    span {
+      font-size: var(--link----mobile);
+    }
+
+    summary {
+      font-size: var(--p----mobile);
+    }
   }
 }
