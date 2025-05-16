@@ -125,47 +125,57 @@
   h1 {
     font-family: "Bronatte Display";
     font-size: var(--h1----desktop);
+    color: var(--color-primary-50);
   }
 
   h2 {
+    @apply uppercase font-black;
     font-family: "Unbounded";
     font-size: var(--h2----desktop);
+    color: var(--color-primary-500);
   }
 
   h3 {
     font-family: "Unbounded";
     font-size: var(--h3----desktop);
+    color: var(--color-primary-400);
   }
 
   h4 {
     font-family: "Unbounded";
     font-size: var(--h4----desktop);
+    color: var(--color-primary-300);
   }
 
   h5 {
     font-family: "Unbounded";
     font-size: var(--h5----desktop);
+    color: var(--color-primary-50);
   }
 
   h6 {
     font-family: "Unbounded";
     font-size: var(--h6----desktop);
+    color: var(--color-primary-50);
   }
 
   p {
     font-family: "Unbounded";
     font-size: var(--p----desktop);
+    color: var(--color-primary-50);
   }
 
   a,
   span {
     font-family: "Unbounded";
     font-size: var(--link----desktop);
+    color: var(--color-primary-500);
   }
 
   summary {
     font-family: "Unbounded";
     font-size: var(--p----desktop);
+    color: var(--color-primary-50);
   }
 
   body {
