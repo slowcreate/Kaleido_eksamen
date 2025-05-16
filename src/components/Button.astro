@@ -1,0 +1,13 @@
+---
+// Du kan evt. tilføje en `label` prop og `href` hvis du vil gøre knappen genanvendelig
+const { label = "buy now", href = "#" } = Astro.props;
+---
+
+<a
+  href={href}
+  class="w-[300px] h-[87px] flex justify-center items-center px-[55px] py-[26px] gap-[10px] bg-[#1C1C1C] rounded-[48px] btn-shadow "
+>
+  <span class="text-gradient-primary font-black text-center uppercase">
+    {label}
+  </span>
+</a>
