@@ -2,26 +2,65 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import landingImage from '../assets/landingpage_photo.png';
 import Button from '../components/Button.astro';
+import Lineup from './lineup.astro';
+import BlueBG from '../components/BlueBG.astro';
+
+type Artist = {
+	artist_name: string;
+	created_at: string;
+	country: string;
+	date: string;
+	crew: string | null;
+	slug: string;
+};
+
+const response = await fetch("https://pdziurppuyuifopvqeap.supabase.co/rest/v1/artists", {
+	method: "GET", 
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkeml1cnBwdXl1aWZvcHZxZWFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0NzYwNzAsImV4cCI6MjA2MzA1MjA3MH0.pXBiQO37hl7cZE_5eZiChRZMkCIHq9FsUr-LGE_F3Yg"
+	}
+});
+
+const rawData = await response.json();
+console.log("rawData", rawData);
+const data: Artist[] = Array.isArray(rawData)
+	? rawData.map((item) => ({
+		...item,
+		slug: item.artist_name.toLowerCase().replace(/\s+/g, "-"),
+	}))
+	: [];
+
+console.log("data", data);
 ---
 
-
 <MainLayout>
-	<article class="">
-		<section>
-			<h1 class="" >Electronic Music Festival</h1>
+	<section class="">
+		<div>
+			<h1 class="">Electronic Music Festival</h1>
 			<h2 class="">2 nights with techno and good vibes</h2>
 			<h4>Get your tickets today!</h4>
-			<p>We are repeating til succes of Kaleido, the eletric music festival taking place in Aarhus the 20.-21. of june.  We can't wait to see you!</p>
-			<Button href="/tickets"></Button>
-		</section>
+			<p>
+				We are repeating the success of Kaleido, the electronic music festival taking place in Aarhus the 20th–21st of June.
+				We can't wait to see you!
+			</p>
+			<Button href="/tickets" />
+		</div>
 		<div class="flex justify-end">
 			<img 
 				src={landingImage.src} 
 				alt="Electronic music crowd"
 				class="w-full max-w-[500px] md:max-w-[700px] lg:max-w-[1100px] h-auto"/>
 		</div>
+	</section>
 
-	</article>
-	
+	<BlueBG>
+		<article class="">
+			<h1>Lineup</h1>
+			<section>
+				{data.map((artist) => (
+					<Lineup data={artist} />
+				))}
+			</section>
+		</article>
+	</BlueBG>
 </MainLayout>
-
