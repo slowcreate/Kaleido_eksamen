@@ -1,0 +1,73 @@
+---
+const targetDate = new Date("2025-06-20T14:00:00Z").getTime();
+export const prerender = false;
+---
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const countdown = document.querySelector('#countdown');
+    const spans = countdown?.querySelectorAll('[data-type]');
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        spans.forEach(span => {
+          span.textContent = "0";
+          span.style.setProperty('--value', 0);
+          span.setAttribute('aria-label', "0");
+        });
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      const values = { days, hours, minutes, seconds };
+
+      spans.forEach(span => {
+        const type = span.getAttribute('data-type');
+        if (type && values[type] !== undefined) {
+          const value = values[type];
+          span.style.setProperty('--value', value);
+          span.setAttribute('aria-label', String(value));
+          span.textContent = value;
+        }
+      });
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  });
+</script>
+
+
+<div id="countdown" class="grid grid-flow-col gap-5 text-center auto-cols-max">
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span class="countdown font-mono text-5xl">
+      <span class="countdown" data-type="days" style="--value:0;" aria-live="polite" aria-label="0">0</span>
+    </span>
+    days
+  </div>
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span class="countdown font-mono text-5xl">
+      <span class="countdown" data-type="hours" style="--value:0;" aria-live="polite" aria-label="0">0</span>
+    </span>
+    hours
+  </div>
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span class="countdown font-mono text-5xl">
+      <span class="countdown" data-type="minutes" style="--value:0;" aria-live="polite" aria-label="0">0</span>
+    </span>
+    min
+  </div>
+  <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+    <span class="countdown font-mono text-5xl">
+      <span class="countdown" data-type="seconds" style="--value:0;" aria-live="polite" aria-label="0">0</span>
+    </span>
+    sec
+  </div>
+</div>
