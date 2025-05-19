@@ -92,12 +92,6 @@
   --text-largeMobile: 2.986rem;
   --text-xlargeMobile: 4rem;
 
-  --font-light: 300;
-  --font-regular: 400;
-  --font-semibold: 500;
-  --font-bold: 600;
-  --font-extrabold: 700;
-
   /* Text-size styles */
   --h1----desktop: 112px;
   --h2----desktop: 54.34000015258789px;
@@ -176,6 +170,8 @@
 
   h5 {
     font-family: "Unbounded";
+    text-transform: uppercase;
+    font-weight: bolder;
     font-size: var(--h5----desktop);
     color: var(--color-primary-50);
   }
