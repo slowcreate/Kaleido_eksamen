@@ -3,18 +3,18 @@ import Button from '../components/Button.astro';
 import BlueBG from './BlueBG.astro';
 import { Image } from 'astro:assets';
 import SoMe from './SoMe.astro';
-import logo from "../assets/images/Digital_Cleanup_Day.webp";
+import logo from "../assets/logo.svg";
 ---
-    <div x-data="{ showmenu: false }" class="fixed top-0 left-0 right-0 z-50 p-3 py-xs lg:p-4 bg-accent-950">
-        <div id="navbar" class="flex justify-between items-center">
-                <div id="logo" class="ml-4">
-                    <!-- <a href="/"><Image src={logo} alt="Digital Cleanup Day" class="w-12 h-12 mr-4"/></a>         -->
+    <div x-data="{ showmenu: false }" class="fixed top-0 left-0 right-0 z-50 p-3 py-xs md:py-s lg:p-4 bg-accent-950/95">
+        <div id="navbar" class="flex items-center">
+                <div id="logo" class="">
+                    <a href="/"><Image src={logo} alt="" class="w-[40%] md:w-[30%] h-auto"/></a>        
                 </div>
                 <nav id="desktopmenu" class="hidden lg:block mx-10 -ml-10">
-                    <ul class="flex flex-row gap-8">
+                    <ul class="flex flex-row gap-6">
                         <li><a href="/tickets" class="transition hover:text-primary-500"><h6>Tickets</h6></a></li>
-                        <li><a href="/" class="transition hover:text-primary-500"><h6>Lineup</h6></a></li>
-                        <li><a href="#" class="transition hover:text-primary-500"><h6>Volunteer</h6></a></li>
+                        <li><a href="/lineup" class="transition hover:text-primary-500"><h6>Lineup</h6></a></li>
+                        <li><a href="/volunteer" class="transition hover:text-primary-500"><h6>Volunteer</h6></a></li>
                         
                         <!-- Desktop dropdown -->
                         <li x-data="{ open: false }" class="relative">
@@ -28,10 +28,10 @@ import logo from "../assets/images/Digital_Cleanup_Day.webp";
                                 x-show="open" 
                                 @mouseenter="open = true" 
                                 @mouseleave="open = false"
-                                class="absolute top-full left-0 bg-accent-950 mt-2 py-2 px-4 rounded shadow-lg text-sm space-y-2"
+                                class="absolute top-full mt-4 bg-accent-950/95 px-4 rounded shadow-lg space-y-2"
                             >
                                 <li><a href="https://www.facebook.com/kaleidofest" target="_blank" class="block hover:text-primary-500"><h6>Facebook Event</h6></a></li>
-                                <li><a href="/anden-event" class="block hover:text-primary-500"><h6>Andet Event</h6></a></li>
+                                <li><a href="https://ra.co/events/1956413" class="block hover:text-primary-500"><h6>Resident Advisor Event</h6></a></li>
                             </ul>
                         </li>
 
@@ -40,7 +40,7 @@ import logo from "../assets/images/Digital_Cleanup_Day.webp";
                 </nav> 
 
                 <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.5" stroke="var(--color-primary-500)" class="w-6 h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 23 23" stroke-width="1.5" stroke="var(--color-primary-500)" class="w-8 h-8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
@@ -52,25 +52,25 @@ import logo from "../assets/images/Digital_Cleanup_Day.webp";
             x-on:click.outside="showmenu = false"
         >
             <ul>
-                <li class="text-center py-2"><a href="/tickets" class="transition hover:text-primary-500"><h6 class="text-white">Tickets</h6></a></li>
-                <li class="text-center py-2"><a href="/lineup" class="transition hover:text-primary-500"><h6 class="text-white">Lineup</h6></a></li>
-                <li class="text-center py-2"><a href="/volunteer" class="transition hover:text-primary-500"><h6 class="text-white">Volunteer</h6></a></li>
+                <li class="text-center py-2"><a href="/tickets" class="transition hover:text-primary-500"><h6 class="">Tickets</h6></a></li>
+                <li class="text-center py-2"><a href="/lineup" class="transition hover:text-primary-500"><h6 class="">Lineup</h6></a></li>
+                <li class="text-center py-2"><a href="/volunteer" class="transition hover:text-primary-500"><h6 class="">Volunteer</h6></a></li>
                 
                 <!-- Mobil dropdown -->
                 <li x-data="{ open: false }" class="text-center py-2">
-                    <button @click="open = !open" class="text-white hover:text-primary-500">
+                    <button @click="open = !open" class=" hover:text-primary-500">
                         <h6>Events</h6>
                     </button>
                     <ul x-show="open" class="mt-2 space-y-1">
-                        <li><a href="https://www.facebook.com/kaleidofest" target="_blank" class="block text-white hover:text-primary-500"><h6>Facebook Event</h6></a></li>
-                        <li><a href="/anden-event" class="block text-white hover:text-primary-500"><h6>Andet Event</h6></a></li>
+                        <li><a href="https://www.facebook.com/kaleidofest" target="_blank" class="block  hover:text-primary-500"><h6>Facebook Event</h6></a></li>
+                        <li><a href="https://ra.co/events/1956413" class="block  hover:text-primary-500"><h6>Resident Advisor Event</h6></a></li>
                     </ul>
                 </li>
 
-                <li class="text-center py-2"><a href="/about" class="transition hover:text-primary-500"><h6 class="text-white">About us</h6></a></li>  
+                <li class="text-center py-2"><a href="/about" class="transition hover:text-primary-500"><h6 class="">About us</h6></a></li>  
             </ul>
             <SoMe></SoMe>
         </nav>
     </div>
-    <div class="pt-20 lg:pt-24"></div>
+    <div class="pt-24 lg:pt-32"></div>
 

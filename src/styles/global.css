@@ -72,26 +72,6 @@
   --border_radius-radius-2xl: 79px;
   --border_radius-radius-3xl: 100px;
 
-  --text-konsultativDesk: 1rem;
-  --text-baseDesk: 1.25rem;
-  --text-bodyDesk: 1.125rem;
-  --text-smallDesk: 1.5rem;
-  --text-smallMediumDesk: 2rem;
-  --text-mediumDesk: 2.45rem;
-  --text-mediumLargeDesk: 3.5rem;
-  --text-largeDesk: 5.61rem;
-  --text-xlargeDesk: 6rem;
-
-  --text-konsultativMobile: 0.8rem;
-  --text-bodyMobile: 1rem;
-  --text-baseMobile: 1.2rem;
-  --text-smallMobile: 1.44rem;
-  --text-smallMediumMobile: 1.728rem;
-  --text-mediumMobile: 1.9rem;
-  --text-mediumLargeMobile: 2.488rem;
-  --text-largeMobile: 2.986rem;
-  --text-xlargeMobile: 4rem;
-
   /* Text-size styles */
   --h1----desktop: 112px;
   --h2----desktop: 54.34000015258789px;
