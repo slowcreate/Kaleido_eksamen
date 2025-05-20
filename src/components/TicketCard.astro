@@ -1,0 +1,12 @@
+---
+const { href="#", target="_self"} = Astro.props; 
+import Button from "./Button.astro";
+---
+<a href={href} class="w-fit uppercase font-semibold" target={target}><slot /></a>
+
+<section>
+<h3></h3>
+<h6></h6>
+<h4></h4>
+<Button></Button>
+</section>

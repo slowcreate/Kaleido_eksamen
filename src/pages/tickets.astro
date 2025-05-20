@@ -1,7 +1,24 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import TicketCard from '../components/TicketCard.astro';
+import KeepUpdate from '../components/KeepUpdate.astro';
+import { Image } from 'astro:assets';
+import tvs from "../assets/TV_m_billeder.png";
 ---
 
 <MainLayout>
-    
+    <section></section>
+    <article>
+        <section>
+            <h1>Tickets</h1>
+            <h2>2025</h2>
+        </section>
+        <section>
+            <TicketCard></TicketCard>
+            <TicketCard></TicketCard>
+            <TicketCard></TicketCard>
+        </section>
+        <KeepUpdate></KeepUpdate>
+    </article>
+    <Image class="" src={tvs} alt="Tv's"/>
 </MainLayout>

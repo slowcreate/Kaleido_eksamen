@@ -5,8 +5,7 @@ import { Image } from 'astro:assets';
 import SoMe from './SoMe.astro';
 import logo from "../assets/images/Digital_Cleanup_Day.webp";
 ---
-    <div x-data="{ showmenu: false }" class="fixed top-0 left-0 right-0 z-50 p-3 lg:p-4 bg-accent-950">
-        <BlueBG>
+    <div x-data="{ showmenu: false }" class="fixed top-0 left-0 right-0 z-50 p-3 py-xs lg:p-4 bg-accent-950">
         <div id="navbar" class="flex justify-between items-center">
                 <div id="logo" class="ml-4">
                     <!-- <a href="/"><Image src={logo} alt="Digital Cleanup Day" class="w-12 h-12 mr-4"/></a>         -->
@@ -45,9 +44,7 @@ import logo from "../assets/images/Digital_Cleanup_Day.webp";
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
-            </div>
-        </BlueBG>    
-        <BlueBG>    
+            </div> 
         <!-- Mobilmenu med lg:hidden -->
         <nav id="mobilmenu" class="flex flex-col content-center items-center pt-4 lg:hidden"
             x-show="showmenu"
@@ -75,6 +72,5 @@ import logo from "../assets/images/Digital_Cleanup_Day.webp";
             <SoMe></SoMe>
         </nav>
     </div>
-    <div class="pt-12 lg:pt-14"></div>
-</BlueBG>
+    <div class="pt-20 lg:pt-24"></div>
 

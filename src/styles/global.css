@@ -125,6 +125,14 @@
     background-clip: text;
   }
 
+  .border-gradient-primary {
+    border-width: 2px;
+    border-radius: var(--border_radius-radius-xl);
+    border-style: solid;
+    border-image: var(--gradient-primary-text);
+    border-image-slice: 1;
+  }
+
   /* Bruges kun hvis du vil have fallback i CSS (ikke nødvendig pga group-hover) */
   .group:hover .text-gradient-primary {
     background: none;
