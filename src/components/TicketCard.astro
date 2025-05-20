@@ -1,12 +1,20 @@
 ---
-const { href="#", target="_self"} = Astro.props; 
+// Props
 import Button from "./Button.astro";
+const { title, date, price, ctaHref = "#", ctaText = "Buy now" } = Astro.props;
 ---
-<a href={href} class="w-fit uppercase font-semibold" target={target}><slot /></a>
 
-<section>
-<h3></h3>
-<h6></h6>
-<h4></h4>
-<Button></Button>
-</section>
+<div class="relative w-[300px] md:w-[400px] bg-[#1E1E1E] rounded-[36px] border-t-[3px] border-l-[3px] border-gradient-to-tr from-green-400 to-blue-600 p-6 flex flex-col justify-between shadow-lg">
+  <div>
+    <p class="text-center tracking-wider mb-8">{date}</p>
+    <h2 class="text-left leading-tight">
+      {title}
+    </h2>
+  </div>
+
+  <div class="mt-10 flex items-end justify-between">
+    <h3 class="">{price}</h3>
+  </div>
+  <Button href={ctaHref}></Button>
+</div>
+
