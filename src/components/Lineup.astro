@@ -1,8 +1,8 @@
 ---
-import WhiteStarDesk from '../components/WhiteStarDesk.astro'
+// Lineup.astro
+import WhiteStarDesk from '../components/WhiteStarDesk.astro';
 const { data } = Astro.props;
-console.log(data); // Du ser { artist_name, country, date, crew, created_at, slug }
 ---
 
-    <WhiteStarDesk></WhiteStarDesk>
-    <h4>{data.artist_name}</h4>
+<WhiteStarDesk />
+<h4>{data.artist_name}</h4>
