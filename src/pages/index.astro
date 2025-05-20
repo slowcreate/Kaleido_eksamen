@@ -4,7 +4,7 @@ import landingImage from '../assets/landingpage_photo.png';
 import Button from '../components/Button.astro';
 import Lineup from './lineup.astro';
 import BlueBG from '../components/BlueBG.astro';
-import Countdown from '../components/Countdown.astro';
+// import Countdown from '../components/Countdown.astro';
 const { title = "Kaleido Countdown" } = Astro.props;
 
 type Artist = {
@@ -70,7 +70,7 @@ console.log("data", data);
 			</section>
 		</article>
 	</BlueBG>
-	<Countdown client:load>
+	<!-- <Countdown client:load>
 		<h3>We <span class="text-primary-500">can't wait</span> to see you</h3>
-	</Countdown>
+	</Countdown> -->
 </MainLayout>
