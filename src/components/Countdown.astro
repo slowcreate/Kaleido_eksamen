@@ -1,77 +1,64 @@
 ---
-export const prerender = false;
+// Ingen frontmatter JS nødvendigt
 ---
 
-<script type="module">
-  document.addEventListener("DOMContentLoaded", () => {
-    const targetDate = new Date("2025-06-20T14:00:00Z").getTime();
-    const countdown = document.querySelector('#countdown');
-    const spans = countdown?.querySelectorAll('[data-type]');
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const countdown = document.getElementById('countdown');
+    const target = new Date('2025-06-20T14:00:00Z');
 
     function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+      const now = new Date();
+      const diff = target.getTime() - now.getTime();
 
-      if (distance <= 0) {
-        spans.forEach(span => {
-          span.textContent = "0";
-          span.style.setProperty('--value', 0);
-          span.setAttribute('aria-label', "0");
+      const selectors = ['days', 'hours', 'minutes', 'seconds'];
+
+      if (diff <= 0) {
+        selectors.forEach(type => {
+          const el = document.querySelector(`[data-type="${type}"]`);
+          if (el) el.textContent = '0';
         });
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
       const values = { days, hours, minutes, seconds };
 
-      spans.forEach(span => {
-        const type = span.getAttribute('data-type');
-        if (type && values[type] !== undefined) {
-          const value = values[type];
-          span.style.setProperty('--value', value);
-          span.setAttribute('aria-label', String(value));
-          span.textContent = value;
-        }
-      });
+      for (const [type, value] of Object.entries(values)) {
+        const el = document.querySelector(`[data-type="${type}"]`);
+        if (el) el.textContent = String(value); // 💡 konvertering til string
+      }
     }
 
-    setInterval(updateCountdown, 1000);
     updateCountdown();
+    setInterval(updateCountdown, 1000);
   });
 </script>
 
 
 <div class="text-center my-6xl">
   <h2 class="text-primary-50">We <span class="uppercase text-primary-50 text-4xl md:text-6xl lg:text-7xl">can't wait</span> to see you</h2>
+
   <div id="countdown" class="grid grid-flow-col gap-5 text-center auto-cols-max justify-center">
     <div class="flex flex-col p-8 mt-m bg-secondary-500 rounded-2xl text-primary-50 unbounded w-4xl">
-        <span class="countdown ">
-        <span class="countdown bronatte text-7xl text-primary-50" data-type="days" style="--value:0;" aria-live="polite" aria-label="0">0</span>
-        </span>
-        days
+      <span class="bronatte text-7xl text-primary-50" data-type="days">0</span>
+      days
     </div>
     <div class="flex flex-col p-8 mt-m bg-secondary-500 rounded-2xl text-primary-50 unbounded w-4xl">
-        <span class="countdown text-5xl">
-        <span class="countdown bronatte text-7xl text-primary-50" data-type="hours" style="--value:0;" aria-live="polite" aria-label="0">0</span>
-        </span>
-        hours
+      <span class="bronatte text-7xl text-primary-50" data-type="hours">0</span>
+      hours
     </div>
     <div class="flex flex-col p-8 mt-m bg-secondary-500 rounded-2xl text-primary-50 unbounded w-4xl">
-        <span class="countdown text-5xl">
-        <span class="countdown bronatte text-7xl text-primary-50" data-type="minutes" style="--value:0;" aria-live="polite" aria-label="0">0</span>
-        </span>
-        min
+      <span class="bronatte text-7xl text-primary-50" data-type="minutes">0</span>
+      min
     </div>
     <div class="flex flex-col p-8 mt-m bg-secondary-500 rounded-2xl text-primary-50 unbounded w-4xl">
-        <span class="countdown text-5xl">
-        <span class="countdown bronatte text-7xl text-primary-50" data-type="seconds" style="--value:0;" aria-live="polite" aria-label="0">0</span>
-        </span>
-        sec
+      <span class="bronatte text-7xl text-primary-50" data-type="seconds">0</span>
+      sec
     </div>
-    </div>
+  </div>
 </div>
-
