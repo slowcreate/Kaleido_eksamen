@@ -2,7 +2,7 @@
 const { label = "Buy now", href = "#" } = Astro.props;
 ---
 <a href={href} class="inline-block">
-  <div class="p-[2px] rounded-full bg-gradient-to-r from-primary-500 to-accent-500 shadow-[var(--drop--shadow)]">
+  <div class="p-[2px] mt-m rounded-full bg-gradient-to-r from-primary-500 to-accent-500 shadow-[var(--drop--shadow)]">
     <button class="group w-auto h-auto flex justify-center items-center px-[40px] py-[16px] md:px-[55px] md:py-[26px] gap-[10px] bg-secondary-700 rounded-full">
       <h4 class="font-black text-center uppercase text-white group-hover:text-primary-500 transition-all duration-300 text-gradient-primary">
         {label}

@@ -2,75 +2,51 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import landingImage from '../assets/landingpage_photo.png';
 import Button from '../components/Button.astro';
-import Lineup from './lineup.astro';
+import Lineup from '../components/Lineup.astro';
 import BlueBG from '../components/BlueBG.astro';
 import Countdown from '../components/Countingdown.astro';
-const { title = "Kaleido Countdown" } = Astro.props;
 
-type Artist = {
-	artist_name: string;
-	created_at: string;
-	country: string;
-	date: string;
-	crew: string | null;
-	slug: string;
-};
+// const { title = "Kaleido Countdown" } = Astro.props;
 
-let data: Artist[] = [];
-
-const response = await fetch("https://pdziurppuyuifopvqeap.supabase.co/rest/v1/artists", {
-	method: "GET", 
-	headers: {
-		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkeml1cnBwdXl1aWZvcHZxZWFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0NzYwNzAsImV4cCI6MjA2MzA1MjA3MH0.pXBiQO37hl7cZE_5eZiChRZMkCIHq9FsUr-LGE_F3Yg"
-	}
-});
-
-if (response.ok) {
-	const rawData = await response.json();
-	data = Array.isArray(rawData)
-		? rawData.map((item) => ({
-			...item,
-			slug: item.artist_name.toLowerCase().replace(/\s+/g, "-"),
-		}))
-		: [];
-} else {
-	console.error("Failed to fetch artists", response.status);
-}
-
-console.log("data", data);
 ---
 
+
 <MainLayout>
-	<section class="">
-		<div>
-			<h1 class="">Electronic Music Festival</h1>
-			<h2 class="w-[300px] md:w-[600px]">2 nights with techno and good vibes</h2>
-			<h4>Get your tickets today!</h4>
-			<p>
-				We are repeating the success of Kaleido, the electronic music festival taking place in Aarhus the 20th–21st of June.
-				We can't wait to see you!
-			</p>
-			<Button href="/tickets" />
+	<h1 class="pl-xs md:pl-m">Electronic Music Festival</h1>
+	<section class="grid grid-cols-4 pl-xs md:pl-m">
+		<div class="col-span-1 z-10">
+		<h2 class="text-3xl md:text-5xl font-bold glow-text w-[600px]">2 nights with techno and good vibes</h2>
+			<div class="mt-2xl w-[500px]">
+				<h5>Get your tickets today!</h5>
+				<p class="mt-xxs">We are repeating the success of Kaleido, the electronic music festival taking place in Aarhus the 20th–21st of June.
+				We can't wait to see you!</p>
+				<Button href="/tickets" />
+			</div>
 		</div>
-		<div class="flex justify-end">
+		<div class="col-span-2 right-0 md:col-span-3 justify-self-end">
 			<img 
 				src={landingImage.src} 
 				alt="Electronic music crowd"
-				class="w-full max-w-[500px] md:max-w-[700px] lg:max-w-[1100px] h-auto"/>
+				class="w-full max-w-[500px] md:max-w-[1000px] lg:max-w-[1200px] h-auto"/>
 		</div>
 	</section>
-
-	<BlueBG>
-		<article class="">
-			<h1>Lineup</h1>
-			<section>
-				{data.map((artist) => (
-					<Lineup data={artist} />
-				))}
-			</section>
-		</article>
-	</BlueBG>
+	<Lineup></Lineup>
 	<Countdown>
 		<h3>We <span class="text-primary-500">can't wait</span> to see you</h3>
 	</Countdown>
 </MainLayout>
+
+<style>
+@keyframes glow-pulse {
+  0%, {
+    text-shadow: 0 0 2px var(--color-primary-50), 0 0 5px var(--color-primary-50), 0 0 10px var(--color-primary-50);
+  }
+  50% {
+    text-shadow: 0 0 0px var(--color-primary-50), 0 0 2px var(--color-primary-50), 0 0 4px var(--color-primary-50), 0 0 6px var(--color-primary-500);
+  }
+}
+
+.glow-text {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+</style>
