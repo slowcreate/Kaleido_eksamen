@@ -1,14 +1,16 @@
 ---
-import Countdown from '../components/Countingdown.astro';
 import MainLayout from '../layouts/MainLayout.astro';
+import LineUp from '../components/Lineup.astro';
+import Countdown from '../components/Countingdown.astro';
 ---
 
 <MainLayout>
-        <article>
-        <section class="flex justify-center">
-            <h1>Lineup</h1>
-            <h2 class="mt-m md:mt-xl lg:mt-2xl">2025</h2>
-        </section>
-        <Countdown></Countdown>
-        </article>
+	<article>
+		<section class="flex flex-col items-center">
+			<h1>Lineup</h1>
+			<h2 class="mt-m md:mt-xl lg:mt-2xl">2025</h2>
+		</section>
+		<LineUp />
+		<Countdown />
+	</article>
 </MainLayout>

@@ -1,6 +1,35 @@
-<!-- ---
-// I Lineup.astro
-const { data } = Astro.props;
+---
+import { createClient } from '@supabase/supabase-js';
+import WhiteStarDesk from './WhiteStarDesk.astro';
+
+// Supabase credentials (helst via miljøvariabler i virkeligheden)
+const supabaseUrl = 'https://pdziurppuyuifopvqeap.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkeml1cnBwdXl1aWZvcHZxZWFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0NzYwNzAsImV4cCI6MjA2MzA1MjA3MH0.pXBiQO37hl7cZE_5eZiChRZMkCIHq9FsUr-LGE_F3Yg'; // eller via miljøvariabel
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// // Fetch data
+const { data: artists, error } = await supabase
+  .from('artists')
+  .select('artist_name, country');
+
+console.log('ARTISTS DATA:', artists);
+console.log('ERROR:', error);
 ---
 
-<p>{data.artist_name}</p> -->
+<article class="w-full">
+  <section class="">
+    {
+      artists &&
+      artists.map((artist) => (
+        <div class="flex items-center gap-xxs text-primary-300 font-bold text-lg">
+          <WhiteStarDesk />
+          <div class="flex flex-col items-center">
+            <h4 class="text-center">{artist.artist_name}</h4>
+            {/* <h6 class="text-xs">{artist.country}</h6> */}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+</article>
+
