@@ -27,7 +27,7 @@ async function fetchArtists(): Promise<Artist[]> {
 const artists: Artist[] = await fetchArtists();
 ---
 
-  <section class="flex flex-wrap max-w-[376px] md:max-w-[800px] ml-ml md:ml-xl">
+  <section class="flex flex-wrap max-w-[350px] md:max-w-[800px] ml-ml md:ml-xl">
     {artists.length === 0 ? (
       <p>Ingen artister fundet.</p>
     ) : (
