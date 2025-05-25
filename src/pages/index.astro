@@ -13,10 +13,10 @@ import Countdown from '../components/Countingdown.astro';
 		<h1 class="pl-xxs md:pl-s">Electronic Music Festival</h1>
 		<section class="grid grid-cols-4">
 			<div class="col-span-1 z-10">
-				<h2 class="pt-xxs pl-xxs md:pl-s glow-text w-[247px] md:w-[450px]">
+				<h2 class="pt-xxs pl-xxs md:pl-s glow-text w-[247px] md:w-[500px]">
 					2 nights with techno and good vibes
 				</h2>
-				<div class="pl-xxs md:pl-s mt-l md:mt-xl w-[285px] md:w-[450px] lg:w-[525px] bg-accent-950/80 py-xs pr-l">
+				<div class="py-m px-xs pr-ml mt-5xl md:mt-4xl lg:mt-5xl w-[305px] md:w-[500px] lg:w-[600px] bg-accent-950/80 rounded-tr-3xl rounded-br-3xl">
 					<h5>Get your tickets today!</h5>
 					<p class="mt-xs md:mt-s mb-xs">
 						We are repeating the success of Kaleido, the electronic music festival
@@ -27,25 +27,25 @@ import Countdown from '../components/Countingdown.astro';
 					</div>
 				</div>
 			</div>
-			<div class="right-0 col-span-3 justify-self-end w-[300px] lg:w-[825px]">
+			<div class="right-0 mt-lg md:mt-xl col-span-3 justify-self-end max-w-[400px] md:max-w-[750px] lg:max-w-[850px] h-auto">
 				<img 
 					src={landingImage.src} 
 					alt="Electronic music crowd"
-					class="w-full max-w-[375px] md:max-w-[750px] lg:max-w-[900px] h-auto"
+					class="w-full"
 				/>
 			</div>
 		</section>
 	</article>
 
 	<BlueBG>
-		<article class="my-3xl">
+		<article class="my-7xl">
 			<h1 class="flex justify-center">Lineup</h1>
 			<LineUp></LineUp>
 		</article>
 	</BlueBG>
 
 	<Countdown>
-		<h3>We <span class="text-primary-500">can't wait</span> to see you</h3>
+		<h3>We can't wait to see you</h3>
 	</Countdown>
 </MainLayout>
 
