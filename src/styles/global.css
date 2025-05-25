@@ -45,56 +45,60 @@
 
   --gradient-primary-text: linear-gradient(108.13deg, #2fffa7 9.96%, #404dff 61.17%);
 
+  /* Spacing */
   --spacing-none: 0rem;
-  --spacing-xxs: 0.5rem;
-  --spacing-xs: 1rem;
-  --spacing-s: 1.5rem;
-  --spacing-sm: 2rem;
-  --spacing-m: 2.5rem;
-  --spacing-ml: 3rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 5rem;
-  --spacing-2xl: 6rem;
-  --spacing-3xl: 7rem;
-  --spacing-4xl: 8rem;
-  --spacing-5xl: 10rem;
-  --spacing-6xl: 13rem;
-  --spacing-7xl: 20rem;
-  --spacing-8xl: 22.5rem;
-  --spacing-9xl: 26.5rem;
+  --spacing-xxs: 0.375rem;
+  --spacing-xs: 0.75rem;
+  --spacing-s: 1.125rem;
+  --spacing-sm: 1.5rem;
+  --spacing-m: 1.875rem;
+  --spacing-ml: 2.25rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 3.75rem;
+  --spacing-2xl: 4.5rem;
+  --spacing-3xl: 5.25rem;
+  --spacing-4xl: 6rem;
+  --spacing-5xl: 7.5rem;
+  --spacing-6xl: 9.75rem;
+  --spacing-7xl: 15rem;
+  --spacing-8xl: 16.875rem;
+  --spacing-9xl: 19.875rem;
 
+  /* Border radius */
   --border_radius-radius-none: 0rem;
-  --border_radius-radius-xs: 0.4375rem;
-  --border_radius-radius-s: 0.875rem;
-  --border_radius-radius-md: 1.34375rem;
-  --border_radius-radius-lg: 2.1875rem;
-  --border_radius-radius-xl: 3.0625rem;
-  --border_radius-radius-2xl: 4.9375rem;
-  --border_radius-radius-3xl: 6.25rem;
+  --border_radius-radius-xs: 0.328125rem;
+  --border_radius-radius-s: 0.65625rem;
+  --border_radius-radius-md: 1.007813rem;
+  --border_radius-radius-lg: 1.640625rem;
+  --border_radius-radius-xl: 2.296875rem;
+  --border_radius-radius-2xl: 3.703125rem;
+  --border_radius-radius-3xl: 4.6875rem;
 
-  /* Text-size styles */
-  --h1----desktop: 7rem;
-  --h2----desktop: 3.39625rem;
-  --h3----desktop: 2.22rem;
-  --h4----desktop: 1.74375rem;
-  --h5----desktop: 1.401875rem;
-  --h6----desktop: 1.208125rem;
-  --p----desktop: 1.0625rem;
-  --h1----mobile: 3.36125rem;
-  --h2----mobile: 1.675625rem;
-  --h3----mobile: 1.13625rem;
-  --h4----mobile: 0.915625rem;
-  --h5----mobile: 0.7525rem;
-  --h6----mobile: 0.7rem;
-  --p----mobile: 0.5625rem;
-  --link----desktop: 1.708125rem;
-  --link----mobile: 1.020625rem;
+  /* Desktop typografi */
+  --h1----desktop: 5.25rem;
+  --h2----desktop: 2.5471875rem;
+  --h3----desktop: 1.665rem;
+  --h4----desktop: 1.3078125rem;
+  --h5----desktop: 1.05140625rem;
+  --h6----desktop: 0.90609375rem;
+  --p----desktop: 0.796875rem;
+  --link----desktop: 1.28109375rem;
 
-  /* Effect styles */
-  --inner--shadow: inset 0rem 0.125rem 0.375rem rgba(45, 45, 45, 0.95); /* 0 2px 6px */
-  --drop--shadow: 0rem 0rem 0.875rem rgba(235, 255, 247, 1); /* 0 0 14px */
-  --drop--shadow----secondary: 0.125rem 0rem 3rem rgba(235, 255, 247, 1); /* 2px 0 48px */
-  --inner--shadow----secondary: inset 0rem 0.25rem 1.5rem rgba(48, 255, 167, 1); /* 0 4px 24px */
+  /* Mobile typografi */
+  --h1----mobile: 2.5209375rem;
+  --h2----mobile: 1.25671875rem;
+  --h3----mobile: 0.8521875rem;
+  --h4----mobile: 0.68671875rem;
+  --h5----mobile: 0.564375rem;
+  --h6----mobile: 0.525rem;
+  --p----mobile: 0.421875rem;
+  --link----mobile: 0.76546875rem;
+
+  /* Effekt styles */
+  --inner--shadow: inset 0rem 0.09375rem 0.28125rem rgba(45, 45, 45, 0.95); /* 0 1.5px 4.5px */
+  --drop--shadow: 0rem 0rem 0.65625rem rgba(235, 255, 247, 1); /* 0 0 10.5px */
+  --drop--shadow----secondary: 0.09375rem 0rem 2.25rem rgba(235, 255, 247, 1); /* 1.5px 0 36px */
+  --inner--shadow----secondary: inset 0rem 0.1875rem 1.125rem rgba(48, 255, 167, 1); /* 0 3px 18px */
 }
 
 @layer utilities {

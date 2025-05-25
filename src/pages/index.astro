@@ -9,48 +9,46 @@ import Countdown from '../components/Countingdown.astro';
 
 
 <MainLayout>
-	<h1 class="pl-xs md:pl-m">Electronic Music Festival</h1>
-	<section class="grid grid-cols-4 ">
-		<div class="col-span-1 z-10">
-		<h2 class="pt-xs pl-xs md:pl-m glow-text w-[330px] md:w-[600px]">2 nights with techno and good vibes</h2>
-			<div class="pl-xs md:pl-m mt-xl md:mt-2xl w-[380px] md:w-[600px] lg:w-[700px] bg-accent-950/80 py-s pr-ml">
-				<h5>Get your tickets today!</h5>
-				<p class="mt-xxs md:mt-xs mb-s">We are repeating the success of Kaleido, the electronic music festival taking place in Aarhus the 20th-21st of June.
-				We can't wait to see you!</p>
-				<div class="flex justify-end">
-					<Button href="/tickets" />
+	<article class="max-w-[1312px] mx-auto">
+		<h1 class="pl-xxs md:pl-s">Electronic Music Festival</h1>
+		<section class="grid grid-cols-4">
+			<div class="col-span-1 z-10">
+				<h2 class="pt-xxs pl-xxs md:pl-s glow-text w-[247px] md:w-[450px]">
+					2 nights with techno and good vibes
+				</h2>
+				<div class="pl-xxs md:pl-s mt-l md:mt-xl w-[285px] md:w-[450px] lg:w-[525px] bg-accent-950/80 py-xs pr-l">
+					<h5>Get your tickets today!</h5>
+					<p class="mt-xs md:mt-s mb-xs">
+						We are repeating the success of Kaleido, the electronic music festival
+						taking place in Aarhus the 20th-21st of June. We can't wait to see you!
+					</p>
+					<div class="flex justify-end">
+						<Button href="/tickets" />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="right-0 col-span-3 justify-self-end w-[400px] lg:w-[1100px]">
-			<img 
-				src={landingImage.src} 
-				alt="Electronic music crowd"
-				class="w-full max-w-[500px] md:max-w-[1000px] lg:max-w-[1200px] h-auto"/>
-		</div>
-	</section>
-	<!-- <BlueBG>
-		<article class="my-5xl">
-			<h1>Lineup</h1>
-			<section>
-			{data.length > 0 ? (
-				data.map((artist) => <Lineup data={artist} />)
-			) : (
-				<p>Intet lineup fundet...</p>
-			)}
-			</section>
-		</article>
-	</BlueBG> -->
+			<div class="right-0 col-span-3 justify-self-end w-[300px] lg:w-[825px]">
+				<img 
+					src={landingImage.src} 
+					alt="Electronic music crowd"
+					class="w-full max-w-[375px] md:max-w-[750px] lg:max-w-[900px] h-auto"
+				/>
+			</div>
+		</section>
+	</article>
+
 	<BlueBG>
-		<article class="my-5xl">
+		<article class="my-3xl">
 			<h1 class="flex justify-center">Lineup</h1>
 			<Lineup></Lineup>
 		</article>
 	</BlueBG>
+
 	<Countdown>
 		<h3>We <span class="text-primary-500">can't wait</span> to see you</h3>
 	</Countdown>
 </MainLayout>
+
 
 <style>
 @keyframes glow-pulse {
