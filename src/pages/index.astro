@@ -54,13 +54,11 @@ import Countdown from '../components/Countingdown.astro';
 
 <style>
 @keyframes glow-pulse {
-  0%, {
-    text-shadow: 0 0 2px var(--color-primary-50), 0 0 5px var(--color-primary-50), 0 0 10px var(--color-primary-50);
-  }
-  50% {
-    text-shadow: 0 0 0px var(--color-primary-50), 0 0 2px var(--color-primary-50), 0 0 4px var(--color-primary-50), 0 0 6px var(--color-primary-500);
+  0%, 100% {
+    text-shadow: 0 0 2px var(--color-primary-500);
   }
 }
+
 
 .glow-text {
   animation: glow-pulse 3s ease-in-out infinite;
