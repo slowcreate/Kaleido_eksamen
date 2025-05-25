@@ -27,21 +27,21 @@ async function fetchArtists(): Promise<Artist[]> {
 const artists: Artist[] = await fetchArtists();
 ---
 
-  <section class="flex flex-wrap max-w-[480px] md:max-w-[1200px] mx-auto">
+  <section class="flex flex-wrap max-w-[376px] md:max-w-[800px] ml-ml md:ml-xl">
     {artists.length === 0 ? (
       <p>Ingen artister fundet.</p>
     ) : (
       <>
         {artists.map((artist) => (
-          <div class="flex items-center">
+        <WhiteStarDesk/>
+        <div class="flex items-center">
             <div class="flex flex-row items-center px-xxs gap-xs">
-              <WhiteStarDesk/>
-              <div class="flex flex-row items-center gap-[1px]">
-                <h4 class="text-center">{artist.artist_name}</h4>
-                <h6 class="">{artist.country}</h6>
-              </div>
+                <div class="flex flex-row items-center gap-[1px]">
+                    <h4 class="text-center">{artist.artist_name}</h4>
+                    <h6 class="">{artist.country}</h6>
+                </div>
             </div>
-          </div>
+        </div>
         ))}
       </>
     )}
