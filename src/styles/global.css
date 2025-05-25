@@ -201,7 +201,7 @@
   }
   body {
     @apply bg-no-repeat bg-cover w-full h-full bg-secondary-500;
-    background-image: url("../assets/gradient_baggrund.png");
+    background-image: url("../assets/gradient_baggrund.webp");
     /* background-size: 100% 100%; */
   }
 
