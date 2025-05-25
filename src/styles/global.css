@@ -87,11 +87,11 @@
   /* Mobile typografi */
   --h1----mobile: 2.5209375rem;
   --h2----mobile: 1.5671875rem;
-  --h3----mobile: 0.8521875rem;
-  --h4----mobile: 0.68671875rem;
-  --h5----mobile: 0.564375rem;
-  --h6----mobile: 0.525rem;
-  --p----mobile: 0.421875rem;
+  --h3----mobile: 1rem;
+  --h4----mobile: 0.9671875rem;
+  --h5----mobile: 0.84375rem;
+  --h6----mobile: 0.725rem;
+  --p----mobile: 0.621875rem;
   --link----mobile: 0.76546875rem;
 
   /* Effekt styles */
@@ -185,6 +185,7 @@
     font-family: "Unbounded";
     font-size: var(--p----desktop);
     color: var(--color-primary-50);
+    font-weight: 200;
   }
 
   a,

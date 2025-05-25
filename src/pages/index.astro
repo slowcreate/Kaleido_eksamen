@@ -45,7 +45,7 @@ import tv from "../assets/TV.webp";
 	</section>
 	<BlueBG>
 		<div class="max-w-[1312px] mx-auto">
-		<article class="mt-6xl md:my-9xl py-xl">
+		<article class="mt-6xl md:mt-9xl md:mb-5xl py-xl">
 			<h1 class="ml-m md:ml-lg mb-sm">Lineup</h1>
 			<LineUp></LineUp>
 		</article>
@@ -60,13 +60,18 @@ import tv from "../assets/TV.webp";
 
 <style>
 @keyframes glow-pulse {
-  0%, 100% {
-    text-shadow: 0 0 2px var(--color-primary-500);
+  0% {
+    text-shadow: 0 0 0px var(--color-primary-50);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--color-primary-50);
+  }
+  100% {
+    text-shadow: 0 0 0px var(--color-primary-50);
   }
 }
 
-
 .glow-text {
-  animation: glow-pulse 3s ease-in-out infinite;
+  animation: glow-pulse 4s ease-in-out infinite;
 }
 </style>
