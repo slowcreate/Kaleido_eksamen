@@ -1,35 +1,92 @@
 ---
-import { createClient } from '@supabase/supabase-js';
-import WhiteStarDesk from './WhiteStarDesk.astro';
+import { apiDetails } from "../../settings";
+import WhiteStarDesk from "./WhiteStarDesk.astro";
 
-// Supabase credentials (helst via miljøvariabler i virkeligheden)
-const supabaseUrl = 'https://pdziurppuyuifopvqeap.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkeml1cnBwdXl1aWZvcHZxZWFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0NzYwNzAsImV4cCI6MjA2MzA1MjA3MH0.pXBiQO37hl7cZE_5eZiChRZMkCIHq9FsUr-LGE_F3Yg';
-const supabase = createClient(supabaseUrl, supabaseKey);
+interface Artist {
+  id: number;
+  artist_name: string;
+  // evt. country?: string;
+}
 
-// // Fetch data
-const { data: artists, error } = await supabase
-  .from('artists')
-  .select('artist_name, country');
+async function fetchArtists(): Promise<Artist[]> {
+  const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/artists?select=*`, {
+    headers: {
+      apikey: apiDetails.supabaseKey,
+      Authorization: `Bearer ${apiDetails.supabaseKey}`,
+    },
+  });
 
-console.log('ARTISTS DATA:', artists);
-console.log('ERROR:', error);
+  if (!res.ok) {
+    console.error('Error fetching artists:', await res.text());
+    return [];
+  }
+
+  const data: Artist[] = await res.json();
+  return data;
+}
+
+const artists: Artist[] = await fetchArtists();
 ---
 
-<article class="w-full">
-  <section class="">
-    {
-      artists &&
-      artists.map((artist) => (
-        <div class="flex items-center gap-xxs text-primary-300 font-bold text-lg">
-          <WhiteStarDesk />
-          <div class="flex flex-col items-center">
-            <h4 class="text-center">{artist.artist_name}</h4>
-            {/* <h6 class="text-xs">{artist.country}</h6> */}
+  <section class="grid grid-cols-2 mx-auto">
+    {artists.length === 0 ? (
+      <p>Ingen artister fundet.</p>
+    ) : (
+      <>
+        {artists.map((artist) => (
+          <div class="flex items-center gap-xs" key={artist.id}>
+            <div class="flex flex-row items-center">
+              <WhiteStarDesk></WhiteStarDesk>
+              <h class="text-center">{artist.artist_name}</h4>
+              <h6 class="text-xs">{artist.country}</h6>
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))}
+      </>
+    )}
   </section>
-</article>
 
+
+
+<!-- ---
+//ts-nocheck
+import MainLayout from "../../layouts/MainLayout.astro";
+import Trestep from "../../components/Trestep.astro";
+import { apiDetails } from "../../settings";
+export async function getStaticPaths() {
+  const res = await fetch(${apiDetails.supabaseUrl}/rest/v1/produkter?select=*, {
+    headers: {
+      apikey: apiDetails.supabaseAnonKey,
+      Authorization: Bearer ${apiDetails.supabaseAnonKey},
+    },
+  });
+  const data = await res.json();
+
+  return data.map((product) => {
+    return {
+      params: { slug: product.slug },
+      props: { myProduct: product },
+    };
+  });
+}
+
+const { myProduct } = Astro.props;
+---
+
+<MainLayout> 
+
+<section class=" grid grid-cols-2 mx-auto">
+    <img class="w-[600px] h-auto" src={`/images/${myProduct.image_filename}`} alt={myProduct.name} />
+ <div>   
+  <h3> {myProduct.name}</h3>
+ <div>
+    <h6>Designet af Ink Saloon Studios</h6>
+    <h6>Format: 120 x 170 mm</h6>
+    <h6>Fra 30 DKK/stk</h6>
+ </div>
+
+</section>
+
+
+<Trestep />
+</MainLayout> -->
