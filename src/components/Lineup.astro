@@ -5,10 +5,13 @@ import WhiteStarDesk from "./WhiteStarDesk.astro";
 interface Artist {
   artist_name: string;
   country?: string;
+  date: string;
 }
 
+const { date } = Astro.props;
+
 async function fetchArtists(): Promise<Artist[]> {
-  const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/artists?select=artist_name,country`, {
+  const res = await fetch(`${apiDetails.supabaseUrl}/rest/v1/artists?select=artist_name,country,date`, {
     headers: {
       apikey: apiDetails.supabaseKey,
       Authorization: `Bearer ${apiDetails.supabaseKey}`,
@@ -24,7 +27,12 @@ async function fetchArtists(): Promise<Artist[]> {
   return data;
 }
 
-const artists: Artist[] = await fetchArtists();
+// const artists: Artist[] = await fetchArtists();
+const artists: Artist[] = (await fetchArtists()).filter(
+  (artist) => artist.date?.toLowerCase().includes(date?.toLowerCase())
+);
+
+
 ---
 
   <section class="flex flex-wrap max-w-[300px] sm:max-w-[450px] md:max-w-[800px] lg:max-w-[900px] ml-m md:ml-xl">
@@ -37,7 +45,7 @@ const artists: Artist[] = await fetchArtists();
         <div class="flex items-center">
             <div class="flex flex-row items-center px-xxs gap-xs">
                 <div class="flex flex-row items-center gap-[1px]">
-                    <h4 class="text-center">{artist.artist_name}</h4>
+                    <h4 class="text-center text-primary-400">{artist.artist_name}</h4>
                     <h6 class="">{artist.country}</h6>
                 </div>
             </div>

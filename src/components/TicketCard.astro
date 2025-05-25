@@ -4,20 +4,19 @@ import Button from "./Button.astro";
 const { title, date, price, ctaHref = "#", ctaText = "Buy now" } = Astro.props;
 ---
 
-<div class="relative w-[350px] md:w-[400px] lg:w-[480px] mx-auto rounded-[2rem] p-[2px] bg-gradient-to-r from-primary-500 to-accent-500 hover:shadow-[var(--drop--shadow)]">
+<div class="relative w-[270px] mb-ml sm:w-[350px] md:w-[400px] lg:w-[300px] mx-auto rounded-[2rem] p-[2px] bg-gradient-to-r from-primary-500 to-accent-500 hover:shadow-[var(--drop--shadow)]">
   <div class="rounded-[2rem] bg-secondary-900 p-6 md:p-8 lg:p-10 flex flex-col justify-between h-full">
-    
     <div>
       <p class="text-right mb-8 md:mb-10 lg:mb-12">{date}</p>
-      <h2 class="text-left leading-tight md:text-xl lg:text-2xl">
+      <h3 class="text-left leading-tight">
         {title}
-      </h2>
+      </h3>
     </div>
-
     <div class="mt-10 flex justify-end mb-s md:mt-12 md:mb-6 lg:mt-14 lg:mb-8">
-      <h3 class="md:text-lg lg:text-xl">{price}</h3>
+      <h4 class="font-extrabold">{price}</h4>
     </div>
-
-    <Button href={ctaHref}>{ctaText}</Button>
+    <div class="absolute -bottom-sm">
+      <Button href={ctaHref}>{ctaText}</Button>
+    </div>
   </div>
 </div>

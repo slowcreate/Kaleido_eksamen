@@ -158,13 +158,14 @@
   h3 {
     font-family: "Unbounded";
     font-size: var(--h3----desktop);
-    color: var(--color-primary-400);
+    color: var(--color-primary-500);
+    font-weight: 800;
   }
 
   h4 {
     font-family: "Unbounded";
     font-size: var(--h4----desktop);
-    color: var(--color-primary-300);
+    color: var(--color-primary-50);
   }
 
   h5 {

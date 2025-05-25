@@ -2,15 +2,33 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import LineUp from '../components/Lineup.astro';
 import Countdown from '../components/Countingdown.astro';
+import BlueBG from '../components/BlueBG.astro';
+
 ---
 
 <MainLayout>
-	<article>
-		<section class="flex justify-center">
-			<h1>Lineup</h1>
-			<h2 class="mt-m md:mt-xl lg:mt-2xl">2025</h2>
-		</section>
-		<LineUp />
-		<Countdown />
-	</article>
+        <article class="max-w-[1312px] mx-auto">
+            <section class="flex justify-center">
+                <h1>Lineup</h1>
+                <h2 class="mt-m md:mt-xl lg:mt-2xl">2025</h2>
+            </section>
+            <BlueBG> 
+            <div class="flex flex-col justify-self-end text-end md:mt-ml md:mb-s pt-xl">
+                <div class="mr-m md:mr-xl">
+                <h2>20 june</h2>
+                <h3>Friday</h3>
+                </div>
+                <LineUp date="friday" />    
+            </div>
+            <div class="md:mt-ml md:mb-5xl py-xl">
+                <div class="ml-m md:ml-xl">
+                <h2>21 june</h2>
+                <h3>Saturday</h3>
+                </div>
+                <LineUp date="saturday" />    
+            </div>
+            </BlueBG>
+            <Countdown />
+        </article>
+
 </MainLayout>
