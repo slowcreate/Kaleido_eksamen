@@ -10,17 +10,19 @@ import Countdown from '../components/Countingdown.astro';
 
 <MainLayout>
 	<h1 class="pl-xs md:pl-m">Electronic Music Festival</h1>
-	<section class="grid grid-cols-4 pl-xs md:pl-m">
+	<section class="grid grid-cols-4 ">
 		<div class="col-span-1 z-10">
-		<h2 class="text-3xl md:text-5xl font-bold glow-text w-[600px]">2 nights with techno and good vibes</h2>
-			<div class="mt-2xl w-[500px]">
+		<h2 class="pt-xs pl-xs md:pl-m glow-text w-[330px] md:w-[600px]">2 nights with techno and good vibes</h2>
+			<div class="pl-xs md:pl-m mt-xl md:mt-2xl w-[380px] md:w-[600px] lg:w-[700px] bg-accent-950/80 py-s pr-ml">
 				<h5>Get your tickets today!</h5>
-				<p class="mt-xxs">We are repeating the success of Kaleido, the electronic music festival taking place in Aarhus the 20th–21st of June.
+				<p class="mt-xxs md:mt-xs mb-s">We are repeating the success of Kaleido, the electronic music festival taking place in Aarhus the 20th-21st of June.
 				We can't wait to see you!</p>
-				<Button href="/tickets" />
+				<div class="flex justify-end">
+					<Button href="/tickets" />
+				</div>
 			</div>
 		</div>
-		<div class="right-0 col-span-3 justify-self-end w-[400px] md:w-[1100px]">
+		<div class="right-0 col-span-3 justify-self-end w-[400px] lg:w-[1100px]">
 			<img 
 				src={landingImage.src} 
 				alt="Electronic music crowd"

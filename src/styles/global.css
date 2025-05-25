@@ -141,6 +141,7 @@
     font-family: "Bronatte Display";
     font-size: var(--h1----desktop);
     color: var(--color-primary-50);
+    line-height: normal;
   }
 
   h2 {
