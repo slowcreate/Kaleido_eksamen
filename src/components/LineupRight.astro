@@ -35,7 +35,7 @@ const artists: Artist[] = (await fetchArtists()).filter(
 
 ---
 
-  <section class="flex flex-wrap max-w-[300px] sm:max-w-[450px] md:max-w-[600px] lg:max-w-[850px] ml-m md:ml-xl">
+<section class="flex flex-wrap justify-end text-right max-w-[355px] md:max-w-[600px] lg:max-w-[850px] mr-m md:mr-xl">
     {artists.length === 0 ? (
       <p>Ingen artister fundet.</p>
     ) : (

@@ -170,7 +170,7 @@
 
   h5 {
     font-family: "Unbounded";
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: bolder;
     font-size: var(--h5----desktop);
     color: var(--color-primary-50);
