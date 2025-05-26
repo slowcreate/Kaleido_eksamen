@@ -1,14 +1,47 @@
 ---
-import BlueBG from "./BlueBG.astro"
-import Button from "./Button.astro"
+import BlueBG from "./BlueBG.astro";
+import Button from "./Button.astro";
 ---
 
 <BlueBG>
-    <h1>Keep me updated</h1>
-    <form action="">
-        <input type="text">
-        <input type="radio" name="" id="">
-        <input type="text">
-        <Button></Button>
+  <section class="flex flex-col items-center justify-center px-m py-xl gap-m max-w-[700px] mx-auto">
+    <h1 class=" tracking-wider uppercase text-center">
+      Keep Me Updated
+    </h1>
+    <form action="#" method="post" class="flex flex-col gap-s w-full">
+    <label class="w-full">
+    <div class="p-[2px] rounded-full bg-gradient-to-r from-primary-400 to-accent-500">
+        <input
+        type="text"
+        name="name"
+        placeholder="DIT NAVN"
+        class="w-full rounded-full px-m py-s bg-secondary-600 placeholder-primary-400 focus:outline-none"
+        />
+    </div>
+    </label>
+    <label class="w-full">
+    <div class="p-[2px] rounded-full bg-gradient-to-r from-primary-400 to-accent-500">
+        <input
+        type="email"
+        name="email"
+        placeholder="DIN EMAIL"
+        class="w-full rounded-full px-m py-s bg-secondary-600 placeholder-primary-400 focus:outline-none"
+        />
+    </div>
+    </label>
+      <div class="flex items-center gap-xs text-xs md:text-sm mt-s">
+        <input
+            type="radio"
+            name="valg"
+            value="ja"
+            class="peer appearance-none w-[20px] h-[20px] rounded-full border-2 border-primary-500 bg-secondary-500 bg-clip-padding p-[2px] transition-all duration-200 checked:bg-primary-500"/>
+        <label for="accept" class="text-white leading-tight">
+          Ja, jeg vil gerne modtage mails med nyheder fra Kaleido vedrørende deres aktiviteter.
+        </label>
+      </div>
+      <div class="mt-m self-end">
+        <Button label="Sign up" />
+      </div>
     </form>
+  </section>
 </BlueBG>
