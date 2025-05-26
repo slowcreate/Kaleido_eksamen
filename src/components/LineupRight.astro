@@ -27,7 +27,6 @@ async function fetchArtists(): Promise<Artist[]> {
   return data;
 }
 
-// const artists: Artist[] = await fetchArtists();
 const artists: Artist[] = (await fetchArtists()).filter(
   (artist) => artist.date?.toLowerCase().includes(date?.toLowerCase())
 );

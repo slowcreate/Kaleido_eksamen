@@ -9,6 +9,7 @@
 }
 
 @theme inline {
+  /* Farver */
   --color-primary-950: rgba(0, 31, 18, 1);
   --color-primary-900: rgba(1, 61, 36, 1);
   --color-primary-800: rgba(0, 122, 72, 1);
@@ -95,10 +96,10 @@
   --link----mobile: 0.76546875rem;
 
   /* Effekt styles */
-  --inner--shadow: inset 0rem 0.09375rem 0.28125rem rgba(45, 45, 45, 0.95); /* 0 1.5px 4.5px */
-  --drop--shadow: 0rem 0rem 0.65625rem rgba(235, 255, 247, 1); /* 0 0 10.5px */
-  --drop--shadow----secondary: 0.09375rem 0rem 2.25rem rgba(235, 255, 247, 1); /* 1.5px 0 36px */
-  --inner--shadow----secondary: inset 0rem 0.1875rem 1.125rem rgba(48, 255, 167, 1); /* 0 3px 18px */
+  --inner--shadow: inset 0rem 0.09375rem 0.28125rem rgba(45, 45, 45, 0.95);
+  --drop--shadow: 0rem 0rem 0.65625rem rgba(235, 255, 247, 1);
+  --drop--shadow----secondary: 0.09375rem 0rem 2.25rem rgba(235, 255, 247, 1);
+  --inner--shadow----secondary: inset 0rem 0.1875rem 1.125rem rgba(48, 255, 167, 1);
 }
 
 @layer utilities {
@@ -117,7 +118,6 @@
     border-image-slice: 1;
   }
 
-  /* Bruges kun hvis du vil have fallback i CSS (ikke nødvendig pga group-hover) */
   .group:hover .text-gradient-primary {
     background: none;
     -webkit-text-fill-color: theme("colors.primary.500");
@@ -170,7 +170,6 @@
 
   h5 {
     font-family: "Unbounded";
-    /* text-transform: uppercase; */
     font-weight: bolder;
     font-size: var(--h5----desktop);
     color: var(--color-primary-50);
