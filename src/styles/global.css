@@ -202,9 +202,8 @@
     color: var(--color-primary-50);
   }
   body {
-    @apply bg-no-repeat bg-cover w-full h-full bg-secondary-500;
+    @apply bg-no-repeat bg-cover w-[150%] sm:w-full h-full bg-secondary-500;
     background-image: url("../assets/gradient_baggrund.webp");
-    /* background-size: 100% 100%; */
   }
 
   /* Mobile overrides */
