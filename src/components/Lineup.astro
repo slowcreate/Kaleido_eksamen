@@ -43,10 +43,12 @@ const artists: Artist[] = (await fetchArtists()).filter(
         <WhiteStarDesk/>
         <div class="flex items-center">
             <div class="flex flex-row items-center px-xxs gap-xs">
-                <div class="flex flex-row items-center gap-[1px]">
-                    <h5 class="text-center text-primary-400">{artist.artist_name}</h5>
-                    <h6 class="">{artist.country}</h6>
-                </div>
+                <a href="/lineup">
+                    <div class="flex flex-row items-center gap-[1px]">
+                        <h5 class="text-center text-primary-400 hover:text-primary-50">{artist.artist_name}</h5>
+                        <h6 class="">{artist.country}</h6>
+                    </div>
+                </a>
             </div>
         </div>
         ))}
