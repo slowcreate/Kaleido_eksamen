@@ -18,14 +18,16 @@ import tv from "../assets/TV.webp";
 				<h2 class="pt-xxs pl-xxs md:pl-s glow-text w-[300px] md:w-[500px]">
 					2 nights with techno and good vibes
 				</h2>
-				<div class="py-ml px-xs pr-ml mt-5xl md:mt-4xl lg:mt-6xl w-[305px] md:w-[500px] lg:w-[600px] bg-accent-950/80 rounded-tr-3xl rounded-br-3xl">
-					<h5>Get your tickets today!</h5>
-					<p class="mt-xs md:mt-s mb-xs">
-						We are repeating the success of Kaleido, the electronic music festival
-						taking place in Aarhus the 20th-21st of June. We can't wait to see you!
-					</p>
-					<div class="flex justify-end">
-						<Button href="/tickets" />
+				<div class="relative">
+					<div class="absolute py-s md:py-lg px-ml md:px-xl mt-5xl md:mt-4xl lg:mt-6xl w-[300px] md:w-[500px] lg:w-[600px] bg-accent-950/80 rounded-3xl -left-sm md:-left-ml">
+						<h5>Get your tickets today!</h5>
+						<p class="mt-xs md:mt-s mb-xs">
+							We are repeating the success of Kaleido, the electronic music festival
+							taking place in Aarhus the 20th-21st of June. We can't wait to see you!
+						</p>
+						<div class="flex justify-end">
+							<Button href="/tickets" />
+						</div>
 					</div>
 				</div>
 			</div>
@@ -40,12 +42,12 @@ import tv from "../assets/TV.webp";
 	</article>
 	<section class="relative">
 		<div>
-			<Image class="absolute w-[210px] md:w-[300px] lg:w-[370px] right-xs md:right-sm lg:right-xl top-m md:top-4xl" src={tv} alt="Tv's"/>
+			<Image class="absolute w-[210px] md:w-[300px] lg:w-[370px] right-xs md:right-sm lg:right-xl top-6xl md:top-4xl" src={tv} alt="Tv's"/>
 		</div>
 	</section>
 	<BlueBG>
 		<div class="max-w-[1312px] mx-auto">
-		<article class="mt-6xl md:mt-9xl md:mb-5xl py-xl">
+		<article class="mt-8xl md:mt-9xl md:mb-5xl py-xl">
 			<h1 class="ml-m md:ml-lg mb-sm">Lineup</h1>
 			<LineUp date=""></LineUp>
 			<div class="flex justify-end pr-4xl">
